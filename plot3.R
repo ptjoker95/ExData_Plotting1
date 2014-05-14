@@ -11,7 +11,7 @@ EPC["Time"] <- NULL
 startDate <- as.POSIXct( strptime("2007-2-1", format="%Y-%m-%d"))
 endDate <- as.POSIXct( strptime("2007-2-3", format="%Y-%m-%d"))
 # extract from 2007/2/1 to 2007/2/2
-SM <- subset( EPC, ( EPC$DateNTime >= startDate & EPC$DateNTime < endDate & EPC$Global_active_power != '?') ,select=c(DateNTime, Sub_metering_1,Sub_metering_2,Sub_metering_3) )
+SM <- subset( EPC, ( EPC$DateNTime >= startDate & EPC$DateNTime < endDate) ,select=c(DateNTime, Sub_metering_1,Sub_metering_2,Sub_metering_3) )
 SM$Sub_metering_1 <- as.numeric( SM$Sub_metering_1 )
 SM$Sub_metering_2 <- as.numeric( SM$Sub_metering_2 )
 SM$Sub_metering_3 <- as.numeric( SM$Sub_metering_3 )
